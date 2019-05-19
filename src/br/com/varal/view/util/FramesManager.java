@@ -2,7 +2,7 @@ package br.com.varal.view.util;
 
 import br.com.varal.controller.util.LogUtil;
 import br.com.varal.controller.util.ValidatorUtil;
-import br.com.varal.view.AbstractFrame;
+import br.com.varal.view.frame.AbstractFrame;
 
 public class FramesManager {
 	
@@ -10,7 +10,7 @@ public class FramesManager {
 	
 	static final String LOG_SELECT_FRAME = "Frame selecionado: %s";
 	
-	static public void selecionarFrame(ConstanteFrames novoFrame) {
+	static public void selecionarFrame(FramesEnum novoFrame) {
 		if (ValidatorUtil.isNotEmpty(frameAtual)) {
 			frameAtual.setVisible(false);
 			frameAtual.limpar();
@@ -21,7 +21,7 @@ public class FramesManager {
 	}
 	
 	static public void inicio() {
-		selecionarFrame(ConstanteFrames.INICIO);
+		selecionarFrame(FramesEnum.INICIO);
 	}
 
 }

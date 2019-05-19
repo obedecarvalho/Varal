@@ -14,29 +14,33 @@ public class DAOUtil {
 	
 	private static Connection connection = null;
 	
-	public static Connection getConnection() {
+	private static final String CONNECTION_PATH = "jdbc:sqlite:%s";
+	
+	private static final String LOG_NO_CONNECTION = "Não foi possível abrir a conexão: %s";
+	private static final String LOG_OPEN_CONNECTION = "Conexão aberta: %s";
+	private static final String LOG_CLOSE_CONNECTION = "Conexão fechada: %s";
+	
+	public static Connection getConnection() throws Exception {
 		if (isEmpty(connection)) {
-			try {
-				connection = DriverManager.getConnection("jdbc:sqlite:" + Constante.DB_NAME);
-				if (isEmpty(connection)) {
-					new Exception("Não foi possível abrir a conexão.");
-				}
-				LogUtil.info("Conexão aberta...");
-			} catch (Exception e) {
-				LogUtil.error(e);
-				return null;
+			connection = DriverManager.getConnection(String.format(CONNECTION_PATH, Constante.DB_NAME));
+			if (isEmpty(connection)) {
+				String erro = String.format(LOG_NO_CONNECTION, Constante.DB_NAME);
+				LogUtil.error(erro);
+				throw new Exception(erro);
 			}
+			LogUtil.info(String.format(LOG_OPEN_CONNECTION, Constante.DB_NAME));
 		}
 		return connection;
 	}
 	
-	public static void closeConnection() {
+	public static void closeConnection() throws SQLException {
 		if (isNotEmpty(connection)) {
 			try {
 				connection.close();
-				LogUtil.info("Conexão fechada.");
+				LogUtil.info(String.format(LOG_CLOSE_CONNECTION, Constante.DB_NAME));
 			} catch (SQLException e) {
 				LogUtil.error(e);
+				throw e;
 			}
 		}
 	}

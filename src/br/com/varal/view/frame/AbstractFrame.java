@@ -1,4 +1,4 @@
-package br.com.varal.view;
+package br.com.varal.view.frame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import br.com.varal.controller.util.LogUtil;
+import br.com.varal.view.AbstractActionListener;
 import br.com.varal.view.util.FramesManager;
 
 public abstract class AbstractFrame extends JFrame {
@@ -32,7 +33,7 @@ public abstract class AbstractFrame extends JFrame {
 		this.setVisible(true);
 	}
 
-	public abstract void criarPanel();	//GridLayout/GridBagLayout
+	public abstract void criarPanelInicial();	//GridLayout/GridBagLayout
 	
 	public abstract void limpar();
 	
@@ -53,5 +54,5 @@ public abstract class AbstractFrame extends JFrame {
 		return lblNomeFrame;
 		
 	}
-
+	
 }
