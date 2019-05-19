@@ -16,7 +16,7 @@ import br.com.varal.model.util.DataType;
 
 public class AnnotationUtil {
 	
-	static private Map<DBColumn,Field> getDBColumns(Class<? extends AbstractEntidade> clazz) {
+	static public Map<DBColumn,Field> getDBColumns(Class<? extends AbstractEntidade> clazz) {
 		if (ValidatorUtil.isEmpty(clazz)) {
 			return null;
 		}
