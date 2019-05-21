@@ -16,21 +16,24 @@ import br.com.varal.model.util.DataType;
 
 public class AnnotationUtil {
 	
-	static public Map<DBColumn,Field> getDBColumns(Class<? extends AbstractEntidade> clazz) {
+	static public Map<DBColumn,Field> getDBColumns(Class<? extends AbstractEntidade> clazz, boolean superClazz) {
 		if (ValidatorUtil.isEmpty(clazz)) {
 			return null;
 		}
 
 		Map<DBColumn,Field> dbColumns = new HashMap<DBColumn,Field>();
+		Field[] fields = null;
 		
-		Field[] fields = AbstractEntidade.class.getDeclaredFields();
-		
-		for (Field f : fields) {
-			if (f.isAnnotationPresent(DBColumn.class)) {
-				DBColumn dbColumn = f.getAnnotation(DBColumn.class);
-				dbColumns.put(dbColumn, f);			
+		if (superClazz) {
+			fields = AbstractEntidade.class.getDeclaredFields();
+			
+			for (Field f : fields) {
+				if (f.isAnnotationPresent(DBColumn.class)) {
+					DBColumn dbColumn = f.getAnnotation(DBColumn.class);
+					dbColumns.put(dbColumn, f);			
+				}
 			}
-		}	
+		}
 
 		fields = clazz.getDeclaredFields();
 
@@ -66,7 +69,7 @@ public class AnnotationUtil {
 	
 	static public List<Coluna> getColumnValues(AbstractEntidade obj){
 		List<Coluna> colunas = new ArrayList<Coluna>();
-		Map<DBColumn,Field> columns = getDBColumns(obj.getClass());
+		Map<DBColumn,Field> columns = getDBColumns(obj.getClass(), false);
 		Coluna c = null;
 
 		for (DBColumn dbColumn : columns.keySet()) {
@@ -76,7 +79,9 @@ public class AnnotationUtil {
 			try {
 				Field f = columns.get(dbColumn);
 				f.setAccessible(true);
-				c.setValue(f.get(obj).toString());
+				if (ValidatorUtil.isNotEmpty(f.get(obj))) {
+					c.setValue(f.get(obj).toString());
+				}
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {

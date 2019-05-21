@@ -14,7 +14,7 @@ public class ProdutoDAO extends AbstractDAO<Produto> {
 	//TODO : refatorar -> usar findAll
 	public List<Produto> buscarTodos() throws Exception{
 		Connection conn = DAOUtil.getConnection();
-		PreparedStatement pstmn = conn.prepareStatement("select * from compra;");
+		PreparedStatement pstmn = conn.prepareStatement("select * from produto;");
 		ResultSet rs = pstmn.executeQuery();
 
 		List<Produto> produtos = new ArrayList<Produto>();

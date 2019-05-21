@@ -13,10 +13,11 @@ public class FramesManager {
 	static public void selecionarFrame(FramesEnum novoFrame) {
 		if (ValidatorUtil.isNotEmpty(frameAtual)) {
 			frameAtual.setVisible(false);
-			frameAtual.limpar();
+			frameAtual.clear();
 		}
 		frameAtual = novoFrame.getFrame();
 		LogUtil.trace(String.format(LOG_SELECT_FRAME, frameAtual.getName()));
+		frameAtual.initialPanel();
 		frameAtual.view();
 	}
 	

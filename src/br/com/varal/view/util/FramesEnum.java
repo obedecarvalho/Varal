@@ -23,7 +23,7 @@ public enum FramesEnum {
 	
 	private FramesEnum(AbstractFrame frame) {
 		setFrame(frame);
-		getFrame().criarPanelInicial();
+		//getFrame().initialPanel();
 	}
 
 	public AbstractFrame getFrame() {

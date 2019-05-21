@@ -18,7 +18,7 @@ public class InicioFrame extends AbstractFrame {
 	}
 
 	@Override
-	public void criarPanelInicial() {
+	public void initialPanel() {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(ConstanteView.LAYOUT_ROWS_INICIO, ConstanteView.LAYOUT_COLS_INICIO));
 		panel.add(addBtnMinhasCompras());
@@ -69,7 +69,7 @@ public class InicioFrame extends AbstractFrame {
 	}
 
 	@Override
-	public void limpar() {
+	public void clear() {
 		// TODO Auto-generated method stub
 		
 	}

@@ -19,14 +19,14 @@ import br.com.varal.model.entidade.Produto;
 import br.com.varal.view.AbstractActionListener;
 import br.com.varal.view.util.ConstanteView;
 
-public class MeusProdutosFrame extends AbstractFrame {
+public class MeusProdutosFrame extends AbstractFrameCRUD {
 
 	public MeusProdutosFrame() {
 		super(ConstanteView.FRAME_NAME_MEUS_PRODUTOS);
 	}
 
 	@Override
-	public void criarPanelInicial() {
+	public void initialPanel() {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(ConstanteView.LAYOUT_ROWS, ConstanteView.LAYOUT_COLS));
 		//Descricao/Qtde
@@ -40,7 +40,61 @@ public class MeusProdutosFrame extends AbstractFrame {
 		add(panel);
 	}
 
-	public void criarPainelNovoProduto() {
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private JScrollPane addTbProdutos(List<Produto> produtos) {
+		DefaultTableModel base = new DefaultTableModel();
+		base.addColumn("Descrição");
+		for (Produto p : produtos) {
+			base.addRow(new String[] {p.getDescricao()});
+		}
+
+		JTable table = new JTable(base);
+
+		return new JScrollPane(table);
+	}
+
+	private JButton addBtnAdicionarProduto() {
+		//TODO : subir Abstract Class?
+		JButton btnAdicionarCompra = new JButton(ConstanteView.BTN_ADD_PRODUTO);
+		btnAdicionarCompra.addActionListener(new AbstractActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				super.actionPerformed(e);
+				// TODO : implementar
+				ProdutoMBean.getInstance().novo();
+				newPanel();
+			}
+		});
+		return btnAdicionarCompra;
+	}
+	
+	private JButton addBtnSalvarProduto() {
+		JButton btnAdicionarCompra = new JButton(ConstanteView.BTN_PADRAO_SAVE);
+		btnAdicionarCompra.addActionListener(new AbstractActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				super.actionPerformed(e);
+				// TODO : implementar
+				ProdutoMBean.getInstance().save();
+				//redirecionar para recarregar lista
+			}
+		});
+		return btnAdicionarCompra;
+	}
+
+	@Override
+	public void editPanel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void newPanel() {
 		// TODO : Editar Produto
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(ConstanteView.LAYOUT_ROWS, ConstanteView.LAYOUT_COLS));
@@ -73,51 +127,33 @@ public class MeusProdutosFrame extends AbstractFrame {
 			}
 		});
 		panel.add(descricao);
-
+		panel.add(addBtnSalvarProduto());
+		this.setContentPane(panel);//TODO : melhor jeito??
+		view();
 	}
 
 	@Override
-	public void limpar() {
+	public void viewPanel() {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	private JScrollPane addTbProdutos(List<Produto> produtos) {
-		DefaultTableModel base = new DefaultTableModel();
-		base.addColumn("Descrição");
-		for (Produto p : produtos) {
-			base.addRow(new String[] {p.getDescricao()});
-		}
 
-		JTable table = new JTable(base);
-
-		return new JScrollPane(table);
+	@Override
+	public void listPanel() {
+		// TODO Auto-generated method stub
+		
 	}
 
-	private JButton addBtnAdicionarProduto() {
-		JButton btnAdicionarCompra = new JButton(ConstanteView.BTN_ADD_PRODUTO);
-		btnAdicionarCompra.addActionListener(new AbstractActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				super.actionPerformed(e);
-				// TODO : implementar
-				ProdutoMBean.getInstance().novo();
-			}
-		});
-		return btnAdicionarCompra;
+	@Override
+	public void deletePanel() {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	private JButton addBtnSalvarProduto() {
-		JButton btnAdicionarCompra = new JButton(ConstanteView.BTN_PADRAO_SAVE);
-		btnAdicionarCompra.addActionListener(new AbstractActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				super.actionPerformed(e);
-				// TODO : implementar
-				ProdutoMBean.getInstance().save();
-			}
-		});
-		return btnAdicionarCompra;
+
+	@Override
+	public void searchPanel() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

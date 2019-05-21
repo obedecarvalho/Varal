@@ -40,10 +40,10 @@ public abstract class AbstractDAO<T extends AbstractEntidade> {
 		String fieldCard = StringUtil.stringMultiple("?", fields.size(), ",");
 		PreparedStatement stmn = conn.prepareStatement(String.format(SQL_INSERT, tableName, fieldsString, fieldCard));
 		for (int i = 0; i< fields.size(); i++) {
-			setAttributeByType(stmn, fields.get(i), i);
+			setAttributeByType(stmn, fields.get(i), i+1);
 		}
-		Integer rowDeleted = stmn.executeUpdate();
-		LogUtil.info(String.format(LOG_INSERT, String.format(SQL_INSERT, tableName, fieldsString, fieldCard), obj.getId(), rowDeleted));
+		Integer rowInserted = stmn.executeUpdate();
+		LogUtil.info(String.format(LOG_INSERT, String.format(SQL_INSERT, tableName, fieldsString, fieldCard), obj.getId(), rowInserted));
 	}
 
 	public void insert(Collection<T> list) throws Exception {
@@ -59,7 +59,7 @@ public abstract class AbstractDAO<T extends AbstractEntidade> {
 		String fieldsString = generateFieldsUpdate(fields);
 		PreparedStatement stmn = conn.prepareStatement(String.format(SQL_UPDATE, tableName, fieldsString));
 		for (int i = 0; i< fields.size(); i++) {
-			setAttributeByType(stmn, fields.get(i), i);
+			setAttributeByType(stmn, fields.get(i), i+1);
 		}
 		stmn.setInt(fields.size(), obj.getId());
 		Integer rowUpdated = stmn.executeUpdate();
@@ -90,11 +90,11 @@ public abstract class AbstractDAO<T extends AbstractEntidade> {
 	public T findById(Integer id, Class<? extends AbstractEntidade> clazz) throws Exception {
 		Connection conn = DAOUtil.getConnection();
 		String tableName = AnnotationUtil.getDBTable(clazz).tableName();
-		Map<DBColumn,Field> fields = AnnotationUtil.getDBColumns(clazz);
+		Map<DBColumn,Field> fields = AnnotationUtil.getDBColumns(clazz, false);
 		String fieldsString = generateFieldsInsert(fields);
 		PreparedStatement stmn = conn.prepareStatement(String.format(SQL_SELECT, fieldsString, tableName));
 		stmn.setInt(0, id);
-		// TODO
+		// TODO : lembrar do ID
 		return null;
 	}
 

@@ -32,27 +32,9 @@ public abstract class AbstractFrame extends JFrame {
 		this.pack();
 		this.setVisible(true);
 	}
+	
+	public abstract void initialPanel();	//GridLayout/GridBagLayout
 
-	public abstract void criarPanelInicial();	//GridLayout/GridBagLayout
-	
-	public abstract void limpar();
-	
-	protected JButton addBtnInicio() {
-		JButton btnInicio = new JButton("Início");
-		btnInicio.addActionListener(new AbstractActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				super.actionPerformed(e);
-				FramesManager.inicio();
-			}
-		});
-		return btnInicio;		
-	}
-	
-	protected JLabel addLblNomeFrame() {
-		JLabel lblNomeFrame = new JLabel(getName());
-		return lblNomeFrame;
-		
-	}
-	
+	public abstract void clear();
+
 }
