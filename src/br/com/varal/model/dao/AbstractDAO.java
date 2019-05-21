@@ -23,6 +23,7 @@ public abstract class AbstractDAO<T extends AbstractEntidade> {
 	private static final String SQL_INSERT = "INSERT INTO %s (%s) VALUES (%s);";
 	private static final String SQL_UPDATE = "UPDATE %s SET %s WHERE ID = ?;";
 	private static final String SQL_DELETE = "DELETE FROM %s WHERE ID = ?;";
+	private static final String SQL_SELECT_ALL = "SELECT %d FROM %s;";
 	private static final String SQL_SELECT = "SELECT %d FROM %s WHERE ID = ?;";
 
 	private static final String SQL_FIELD = "%s = ?";
@@ -94,6 +95,11 @@ public abstract class AbstractDAO<T extends AbstractEntidade> {
 		PreparedStatement stmn = conn.prepareStatement(String.format(SQL_SELECT, fieldsString, tableName));
 		stmn.setInt(0, id);
 		// TODO
+		return null;
+	}
+
+	public List<T> findAll(Class<? extends AbstractEntidade> clazz){
+		//TODO
 		return null;
 	}
 

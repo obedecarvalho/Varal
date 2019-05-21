@@ -18,4 +18,10 @@ public class Produto extends AbstractEntidade {
 		this.descricao = descricao;
 	}
 
+	@Override
+	boolean validate() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

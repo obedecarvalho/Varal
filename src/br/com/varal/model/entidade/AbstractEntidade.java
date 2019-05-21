@@ -16,6 +16,8 @@ public abstract class AbstractEntidade {
 		this.id = id;
 	}
 
+	abstract boolean validate();
+
 	@Override
 	public int hashCode() {
 		return getId();
