@@ -2,7 +2,8 @@ package br.com.varal.controller;
 
 import java.util.List;
 
-import br.com.varal.controller.util.ValidatorUtil;
+import br.com.framework.controller.AbstractMBean;
+import br.com.framework.util.ValidatorUtil;
 import br.com.varal.model.dao.ProdutoDAO;
 import br.com.varal.model.entidade.Produto;
 

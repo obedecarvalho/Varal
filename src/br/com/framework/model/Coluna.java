@@ -1,6 +1,6 @@
-package br.com.varal.model.util;
+package br.com.framework.model;
 
-import br.com.varal.controller.util.ValidatorUtil;
+import br.com.framework.util.ValidatorUtil;
 
 public class Coluna {
 	

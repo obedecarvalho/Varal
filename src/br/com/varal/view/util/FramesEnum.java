@@ -2,7 +2,7 @@ package br.com.varal.view.util;
 
 import java.util.List;
 
-import br.com.varal.view.frame.AbstractFrame;
+import br.com.framework.view.AbstractFrame;
 import br.com.varal.view.frame.InicioFrame;
 import br.com.varal.view.frame.MinhasComprasFrame;
 import br.com.varal.view.frame.MeusProdutosFrame;;

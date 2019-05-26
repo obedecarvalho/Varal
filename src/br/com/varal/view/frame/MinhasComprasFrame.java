@@ -5,7 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import br.com.varal.view.AbstractActionListener;
+import br.com.framework.view.AbstractFrameCRUD;
+import br.com.framework.view.listener.AbstractActionListener;
 import br.com.varal.view.util.ConstanteView;
 
 public class MinhasComprasFrame extends AbstractFrameCRUD {

@@ -1,4 +1,4 @@
-package br.com.varal.view.frame;
+package br.com.framework.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -8,9 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import br.com.varal.controller.util.LogUtil;
-import br.com.varal.view.AbstractActionListener;
-import br.com.varal.view.util.FramesManager;
+import br.com.framework.util.LogUtil;
+import br.com.framework.view.listener.AbstractActionListener;
 
 public abstract class AbstractFrame extends JFrame {
 	

@@ -1,8 +1,9 @@
 package br.com.varal.model.entidade;
 
-import br.com.varal.model.annotation.DBColumn;
-import br.com.varal.model.annotation.DBTable;
-import br.com.varal.model.util.DataType;
+import br.com.framework.model.AbstractEntidade;
+import br.com.framework.model.DataType;
+import br.com.framework.model.annotation.DBColumn;
+import br.com.framework.model.annotation.DBTable;
 
 @DBTable(tableName="produto")
 public class Produto extends AbstractEntidade {
@@ -19,7 +20,7 @@ public class Produto extends AbstractEntidade {
 	}
 
 	@Override
-	boolean validate() {
+	public boolean validate() {
 		// TODO Auto-generated method stub
 		return false;
 	}

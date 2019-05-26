@@ -1,9 +1,9 @@
-package br.com.varal.controller.util;
+package br.com.framework.util;
 
 import java.util.Collection;
 import java.util.Map;
 
-import br.com.varal.model.entidade.AbstractEntidade;
+import br.com.framework.model.AbstractEntidade;
 
 public class ValidatorUtil {
 	

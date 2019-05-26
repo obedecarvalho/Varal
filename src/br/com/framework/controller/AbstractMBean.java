@@ -1,9 +1,9 @@
-package br.com.varal.controller;
+package br.com.framework.controller;
 
 import java.util.List;
 
-import br.com.varal.controller.util.LogUtil;
-import br.com.varal.model.entidade.AbstractEntidade;
+import br.com.framework.model.AbstractEntidade;
+import br.com.framework.util.LogUtil;
 
 public abstract class AbstractMBean<T extends AbstractEntidade> {
 	

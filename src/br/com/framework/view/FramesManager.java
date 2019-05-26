@@ -1,8 +1,8 @@
-package br.com.varal.view.util;
+package br.com.framework.view;
 
-import br.com.varal.controller.util.LogUtil;
-import br.com.varal.controller.util.ValidatorUtil;
-import br.com.varal.view.frame.AbstractFrame;
+import br.com.framework.util.LogUtil;
+import br.com.framework.util.ValidatorUtil;
+import br.com.varal.view.util.FramesEnum;
 
 public class FramesManager {
 	

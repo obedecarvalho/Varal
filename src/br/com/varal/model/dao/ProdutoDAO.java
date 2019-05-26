@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.framework.model.AbstractDAO;
+import br.com.framework.model.util.DAOUtil;
 import br.com.varal.model.entidade.Produto;
-import br.com.varal.model.util.DAOUtil;
 
 public class ProdutoDAO extends AbstractDAO<Produto> {
 

@@ -14,9 +14,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import br.com.framework.view.AbstractFrameCRUD;
+import br.com.framework.view.listener.AbstractActionListener;
 import br.com.varal.controller.ProdutoMBean;
 import br.com.varal.model.entidade.Produto;
-import br.com.varal.view.AbstractActionListener;
 import br.com.varal.view.util.ConstanteView;
 
 public class MeusProdutosFrame extends AbstractFrameCRUD {

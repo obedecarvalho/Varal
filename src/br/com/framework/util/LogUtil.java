@@ -1,4 +1,4 @@
-package br.com.varal.controller.util;
+package br.com.framework.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

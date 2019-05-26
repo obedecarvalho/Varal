@@ -1,4 +1,4 @@
-package br.com.varal.model.util;
+package br.com.framework.model;
 
 public enum DataType {
 	INTEGER, REAL, TEXT, BLOB, NULL;

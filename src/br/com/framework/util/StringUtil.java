@@ -1,4 +1,4 @@
-package br.com.varal.controller.util;
+package br.com.framework.util;
 
 public class StringUtil {
 

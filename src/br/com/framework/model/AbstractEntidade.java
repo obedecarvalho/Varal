@@ -1,7 +1,6 @@
-package br.com.varal.model.entidade;
+package br.com.framework.model;
 
-import br.com.varal.model.annotation.DBColumn;
-import br.com.varal.model.util.DataType;
+import br.com.framework.model.annotation.DBColumn;
 
 public abstract class AbstractEntidade {
 
@@ -16,7 +15,7 @@ public abstract class AbstractEntidade {
 		this.id = id;
 	}
 
-	abstract boolean validate();
+	abstract public boolean validate();
 
 	@Override
 	public int hashCode() {

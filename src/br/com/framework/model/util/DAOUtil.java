@@ -1,14 +1,14 @@
-package br.com.varal.model.util;
+package br.com.framework.model.util;
 
-import static br.com.varal.controller.util.ValidatorUtil.isEmpty;
-import static br.com.varal.controller.util.ValidatorUtil.isNotEmpty;
+import static br.com.framework.util.ValidatorUtil.isEmpty;
+import static br.com.framework.util.ValidatorUtil.isNotEmpty;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import br.com.framework.util.LogUtil;
 import br.com.varal.controller.Constante;
-import br.com.varal.controller.util.LogUtil;
 
 public class DAOUtil {
 	

@@ -1,4 +1,4 @@
-package br.com.varal.model.dao;
+package br.com.framework.model;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -9,14 +9,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import br.com.varal.controller.util.LogUtil;
-import br.com.varal.controller.util.StringUtil;
-import br.com.varal.controller.util.ValidatorUtil;
-import br.com.varal.model.annotation.DBColumn;
-import br.com.varal.model.annotation.util.AnnotationUtil;
-import br.com.varal.model.entidade.AbstractEntidade;
-import br.com.varal.model.util.Coluna;
-import br.com.varal.model.util.DAOUtil;
+import br.com.framework.model.annotation.DBColumn;
+import br.com.framework.model.util.AnnotationUtil;
+import br.com.framework.model.util.DAOUtil;
+import br.com.framework.util.LogUtil;
+import br.com.framework.util.StringUtil;
+import br.com.framework.util.ValidatorUtil;
 
 public abstract class AbstractDAO<T extends AbstractEntidade> {
 

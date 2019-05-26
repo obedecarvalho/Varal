@@ -1,7 +1,7 @@
 package br.com.varal.main;
 
-import br.com.varal.controller.util.LogUtil;
-import br.com.varal.view.util.FramesManager;
+import br.com.framework.util.LogUtil;
+import br.com.framework.view.FramesManager;
 
 public class Main {
 

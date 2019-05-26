@@ -1,4 +1,4 @@
-package br.com.varal.model.annotation.util;
+package br.com.framework.model.util;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.com.varal.controller.util.StringUtil;
-import br.com.varal.controller.util.ValidatorUtil;
-import br.com.varal.model.annotation.DBColumn;
-import br.com.varal.model.annotation.DBTable;
-import br.com.varal.model.entidade.AbstractEntidade;
-import br.com.varal.model.util.Coluna;
-import br.com.varal.model.util.DataType;
+import br.com.framework.model.AbstractEntidade;
+import br.com.framework.model.Coluna;
+import br.com.framework.model.DataType;
+import br.com.framework.model.annotation.DBColumn;
+import br.com.framework.model.annotation.DBTable;
+import br.com.framework.util.StringUtil;
+import br.com.framework.util.ValidatorUtil;
 
 public class AnnotationUtil {
 	
