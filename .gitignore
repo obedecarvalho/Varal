@@ -1,6 +1,5 @@
 log.log
 dados/*
 bin/*
-.classpath
-.settings/*
 .project
+.settings/

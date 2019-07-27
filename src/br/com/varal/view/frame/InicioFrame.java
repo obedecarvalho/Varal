@@ -36,7 +36,7 @@ public class InicioFrame extends AbstractFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				super.actionPerformed(e);
-				FramesManager.selecionarFrame(FramesEnum.MINHAS_COMPRAS);
+				FramesManager.selecionarFrame(FramesEnum.MINHAS_COMPRAS.getFrame());
 			}
 		});
 		return btnMinhasCompras;
@@ -53,7 +53,7 @@ public class InicioFrame extends AbstractFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				super.actionPerformed(e);
-				FramesManager.selecionarFrame(FramesEnum.MEUS_PRODUTOS);
+				FramesManager.selecionarFrame(FramesEnum.MEUS_PRODUTOS.getFrame());
 			}
 		});
 		return btnMeusProdutos;
