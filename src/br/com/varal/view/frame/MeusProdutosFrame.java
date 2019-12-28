@@ -20,6 +20,7 @@ import br.com.varal.controller.ProdutoMBean;
 import br.com.varal.model.entidade.Produto;
 import br.com.varal.view.util.ConstanteView;
 
+@Deprecated
 public class MeusProdutosFrame extends AbstractFrameCRUD {
 
 	public MeusProdutosFrame() {
@@ -36,7 +37,7 @@ public class MeusProdutosFrame extends AbstractFrameCRUD {
 		panel.add(addLblNomeFrame());
 		panel.add(addBtnAdicionarProduto());
 
-		panel.add(addTbProdutos(ProdutoMBean.getInstance().list()));
+		//panel.add(addTbProdutos(ProdutoMBean.getInstance().list()));
 
 		add(panel);
 	}
@@ -67,7 +68,7 @@ public class MeusProdutosFrame extends AbstractFrameCRUD {
 			public void actionPerformed(ActionEvent e) {
 				super.actionPerformed(e);
 				// TODO : implementar
-				ProdutoMBean.getInstance().novo();
+				//ProdutoMBean.getInstance().novo();
 				newPanel();
 			}
 		});
@@ -81,7 +82,7 @@ public class MeusProdutosFrame extends AbstractFrameCRUD {
 			public void actionPerformed(ActionEvent e) {
 				super.actionPerformed(e);
 				// TODO : implementar
-				ProdutoMBean.getInstance().save();
+				//ProdutoMBean.getInstance().save1();
 				//redirecionar para recarregar lista
 			}
 		});
@@ -118,7 +119,7 @@ public class MeusProdutosFrame extends AbstractFrameCRUD {
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					ProdutoMBean.getInstance().getObj().setDescricao(descricao.getText());
+					//ProdutoMBean.getInstance().getObj().setDescricao(descricao.getText());
 				}
 			}
 

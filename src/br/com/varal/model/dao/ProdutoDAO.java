@@ -7,14 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.framework.model.AbstractDAO;
-import br.com.framework.model.util.DAOUtil;
 import br.com.varal.model.entidade.Produto;
 
 public class ProdutoDAO extends AbstractDAO<Produto> {
 
 	//TODO : refatorar -> usar findAll
 	public List<Produto> buscarTodos() throws Exception{
-		Connection conn = DAOUtil.getConnection();
+		Connection conn = getConnection();
 		PreparedStatement pstmn = conn.prepareStatement("select * from produto;");
 		ResultSet rs = pstmn.executeQuery();
 

@@ -1,6 +1,6 @@
 package br.com.varal.model.entidade;
 
-import br.com.framework.model.AbstractEntidade;
+import br.com.framework.core.AbstractEntidade;
 import br.com.framework.model.DataType;
 import br.com.framework.model.annotation.DBColumn;
 import br.com.framework.model.annotation.DBTable;
